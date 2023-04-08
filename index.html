@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>Đếm ngược ngày thi</title>
+<link rel="stylesheet" href="style.css">
+<link rel="shortcut icon" href="icon.png" />
+<link rel="stylesheet" href="bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+<br>
+<h2><span>Bạn đang làm rất tốt, cố lên nào! </span>28-06-2023</h2>
+<div class="countdown">
+<div id="day">Ôn</div>
+<div id="hour">Thi</div>
+<div id="minute">Tốt</div>
+<div id="second">Nha</div>
+</div>
+<div id="taitro">
+<a href="https://www.facebook.com/ThuongTinConfessions/?locale=vi_VN" class="btn btn-outline-warning btn-sm" target="_blank">Thường Tín Cfs</a>
+</div>
+</div>
+<script type="text/javascript">
+        var countDate = new Date('Jun 28, 2023 00:00:00').getTime();
+
+        function newYear() {
+            var now = new Date().getTime();
+            gap = countDate - now;
+
+            var second = 1000;
+            var minute = second * 60;
+            var hour = minute * 60;
+            var day = hour * 24;
+
+            var d = Math.floor(gap / (day));
+            var h = Math.floor((gap % (day)) / (hour));
+            var m = Math.floor((gap % (hour)) / (minute));
+            var s = Math.floor((gap % (minute)) / (second));
+
+            document.getElementById('day').innerText = d;
+            document.getElementById('hour').innerText = h;
+            document.getElementById('minute').innerText = m;
+            document.getElementById('second').innerText = s;
+        }
+        setInterval(function () {
+            newYear();
+        }, 1000)
+    </script>
+</body>
+</html>
